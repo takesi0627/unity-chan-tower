@@ -1,4 +1,3 @@
-using System;
 using UCTower.Common;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -54,10 +53,16 @@ namespace UCTower.Core
         {
             if (collision.gameObject.CompareTag(TagDefine.Ground) || collision.gameObject.CompareTag(TagDefine.Block))
             {
-                BlockState = EBlockState.Grounded;
+                Grounded();
             }
         }
 
+        private void Grounded()
+        {
+            BlockState = EBlockState.Grounded;
+            _rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
+        }
+        
         public void StopMoveAndStartFall()
         {
             _mover.StopMove();

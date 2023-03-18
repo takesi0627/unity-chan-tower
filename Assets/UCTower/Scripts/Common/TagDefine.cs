@@ -4,5 +4,6 @@ namespace UCTower.Common
     {
         public const string Ground = "Ground";
         public const string Block = "Block";
+        public const string Boundary = "Boundary";
     }
 }
