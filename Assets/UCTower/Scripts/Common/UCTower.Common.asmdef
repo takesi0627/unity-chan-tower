@@ -1,7 +1,7 @@
 {
-    "name": "UCTower.Core",
-    "rootNamespace": "UCTower.Core",
-    "references": ["GUID:7cca797f4cd97425482458916f90151c"],
+    "name": "UCTower.Common",
+    "rootNamespace": "UCTower.Common",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

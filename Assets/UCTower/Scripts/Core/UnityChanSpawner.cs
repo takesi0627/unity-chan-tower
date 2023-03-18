@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UTTower.Core
+namespace UCTower.Core
 {
     public class UnityChanSpawner : MonoBehaviour
     {
@@ -9,39 +9,25 @@ namespace UTTower.Core
         /// </summary>
         public GameObject blockPrefab;
         
-        /// <summary>
-        /// Unity-chanのプレハブの配列
-        /// </summary>
-        public GameObject[] UnityChanPrefabs;
-
-        /// <summary>
-        /// Unity-chanを生成する間隔
-        /// </summary>
-        public float SpawnInterval = 1.0f;
-
-        /// <summary>
-        /// Unity-chanの初期位置の高さ
-        /// </summary>
-        public float SpawnHeight = 10.0f;
-
-        private float timer; // 経過時間を計測するタイマー
-
+        private UnityChanBlock _currentBlock;
+        
         private void Update()
         {
-            // 経過時間を加算
-            timer += Time.deltaTime;
+            if (!_currentBlock || _currentBlock.BlockState == UnityChanBlock.EBlockState.Grounded)
+            {
+                Spawn();
+            }
 
-            // 一定時間経過したら、Unity-chanを生成する
-            if (!(timer >= SpawnInterval)) return;
-            
-            // Unity-chanをランダムに選択して生成
-            var index = Random.Range(0, UnityChanPrefabs.Length);
+            // ユーザーがタップしたら落とす
+            if (_currentBlock.BlockState == UnityChanBlock.EBlockState.WaitForTap && Input.GetMouseButtonDown(0))
+            {
+                _currentBlock.GetComponent<Rigidbody>().useGravity = true;
+            }
+        }
 
-            var block = Instantiate(blockPrefab, transform);
-            var unityChan = Instantiate(UnityChanPrefabs[index], block.transform);
-
-            // タイマーをリセット
-            timer = 0.0f;
+        private void Spawn()
+        {
+            _currentBlock = Instantiate(blockPrefab, transform).GetComponent<UnityChanBlock>();
         }
     }
 }

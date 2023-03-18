@@ -241,8 +241,8 @@ GameObject:
   - component: {fileID: 282336157}
   - component: {fileID: 282336156}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 282336154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.11, z: 0}
-  m_LocalScale: {x: 4.5521, y: 0.117545284, z: 1}
+  m_LocalScale: {x: 4.5521, y: 0.117545284, z: 6.242}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2146310222}
@@ -363,15 +363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 878739579424248945, guid: e8f709283f2ea4352ade6f0d6edcdb8d, type: 3}
-  UnityChanPrefabs:
-  - {fileID: 119316, guid: 1b116d1d98225c449952c7fe4df59bcc, type: 3}
-  - {fileID: 176360, guid: ada6fe60e74b3c84f852f19a76d76872, type: 3}
-  - {fileID: 196878, guid: 3886001691da2124688a8816d352423a, type: 3}
-  - {fileID: 136860, guid: 7e0f7737a40453040a6beb5f9d8a599b, type: 3}
-  - {fileID: 193738, guid: 441d3767f050bfc42987d96a4520af07, type: 3}
-  - {fileID: 167952, guid: 2774cf9769544e141996fef21c3e26e3, type: 3}
-  SpawnInterval: 1
-  SpawnHeight: 10
 --- !u!4 &332127721
 Transform:
   m_ObjectHideFlags: 0
