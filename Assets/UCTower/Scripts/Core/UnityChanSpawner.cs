@@ -21,7 +21,7 @@ namespace UCTower.Core
             // ユーザーがタップしたら落とす
             if (_currentBlock.BlockState == UnityChanBlock.EBlockState.WaitForTap && Input.GetMouseButtonDown(0))
             {
-                _currentBlock.GetComponent<Rigidbody>().useGravity = true;
+                _currentBlock.StopMoveAndStartFall();
             }
         }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 878739579424248951}
   - component: {fileID: 878739579424248948}
   - component: {fileID: 1343986578429821193}
+  - component: {fileID: 3527931759972400171}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878739579424248945}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!54 &878739579424248951
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -68,7 +69,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878739579424248945}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 60580d1ec8be04597a9d7334ce9e60d6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -80,7 +81,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.34553596
+  m_Radius: 0.22
   m_Height: 1.0000006
   m_Direction: 1
   m_Center: {x: -0.000000004126689, y: 0.5, z: -0.15446414}
@@ -103,3 +104,16 @@ MonoBehaviour:
   - {fileID: 136860, guid: 7e0f7737a40453040a6beb5f9d8a599b, type: 3}
   - {fileID: 193738, guid: 441d3767f050bfc42987d96a4520af07, type: 3}
   - {fileID: 167952, guid: 2774cf9769544e141996fef21c3e26e3, type: 3}
+--- !u!114 &3527931759972400171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878739579424248945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c98b44a32c4248f0a589b14cc4f7c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3

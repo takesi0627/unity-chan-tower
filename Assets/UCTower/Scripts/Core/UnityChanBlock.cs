@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 namespace UCTower.Core
 {
     [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(UnityChanMover))]
     public class UnityChanBlock : MonoBehaviour
     {
         public enum EBlockState
@@ -32,6 +33,8 @@ namespace UCTower.Core
         /// </summary>
         public bool IsGrounded { get; private set; }
 
+
+        private UnityChanMover _mover;
         private Rigidbody _rigidbody;
         
         private void Awake()
@@ -39,6 +42,12 @@ namespace UCTower.Core
             var index = Random.Range(0, unityChanPrefabs.Length);
             _unityChan = Instantiate(unityChanPrefabs[index], transform);
             _rigidbody = GetComponent<Rigidbody>();
+            _mover = GetComponent<UnityChanMover>();
+        }
+
+        private void Start()
+        {
+            _mover.StartMove();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -49,18 +58,11 @@ namespace UCTower.Core
             }
         }
 
-        // Update is called once per frame
-        private void Update()
+        public void StopMoveAndStartFall()
         {
-            if (BlockState == EBlockState.WaitForTap)
-            {
-                // Move right to left
-            }
-            
-            if (_rigidbody.useGravity && BlockState == EBlockState.WaitForTap)
-            {
-                BlockState = EBlockState.Falling;
-            }
+            _mover.StopMove();
+            _rigidbody.useGravity = true;
+            BlockState = EBlockState.Falling;
         }
     }
 }
