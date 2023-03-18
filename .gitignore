@@ -1,0 +1,30 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# VS/VSCode generated
+/Assets/Plugins/Editor/
+/Assets/Plugins/OcclusionCulling/
+/Assets/Scripts/AssemblyInfo.cs
+
+# Project settings
+/ProjectSettings/*
+!ProjectSettings/ProjectVersion.txt
+*.csproj
+*.pidb
+*.sln*
+*.userprefs
+
+# Package-specific files
+/packages/
+/packman-lock.json
+
+# Other ignored files
+.DS_Store
+Thumbs.db
+
